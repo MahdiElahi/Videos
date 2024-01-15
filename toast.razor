@@ -1,0 +1,39 @@
+Toast Codes ...
+
+<SfToast ID="toast_default" @ref="ToastObj" Title="Aircraft" ProgressDirection=ProgressDirection.LTR  ShowProgressBar=true CssClass="e-toast-success" Content="Books Add Succesfully" Timeout="2000" Icon="e-check">
+    <ToastPosition X="Center" Y="Bottom"></ToastPosition>
+    <ToastEvents Closed="@ClosedHandler"></ToastEvents>
+</SfToast>
+
+@code
+{
+    SfToast ToastObj;
+    string ToastMessage;
+    public async Task HandleSubmit()
+    {
+        if (Id != 0) // Edit
+        {
+            update codes ... 
+          
+            await this.ToastObj.ShowAsync();
+
+        }
+        else // Insert
+        {
+          insert codes ...
+          
+          await this.ToastObj.ShowAsync();
+
+        }
+    }
+    public void ClosedHandler(ToastCloseArgs args)
+
+    {
+        navigationManager.NavigateTo("/books", true);
+    }
+  
+    [Parameter]
+    public int Id { get; set; }
+
+
+    
