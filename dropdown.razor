@@ -1,0 +1,15 @@
+   <GridColumn TextAlign="TextAlign.Center" Width="150">
+       <Template>
+           @{
+               var aircraft = (context as Book);
+               <SfDropDownButton IconCss="e-icons e-settings">
+                   <DropDownButtonEvents ItemSelected="@((e) => ItemSelected(e, book))"></DropDownButtonEvents>
+                   <DropDownMenuItems>
+                       <DropDownMenuItem IconCss="e-icons e-print-layout" Text="View"></DropDownMenuItem>
+                       <DropDownMenuItem IconCss="e-icons e-edit" Text="Edit"></DropDownMenuItem>
+                       <DropDownMenuItem IconCss="e-icons e-trash" Text="Delete"></DropDownMenuItem>
+                   </DropDownMenuItems>
+               </SfDropDownButton>
+           }
+       </Template>
+   </GridColumn>
